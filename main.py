@@ -36,6 +36,9 @@ def main():
             if asteroid.overlaps(player):
                 print(f"Game over!")
                 sys.exit(0)
+            for shot in shots:
+                if shot.overlaps(asteroid):
+                    asteroid.kill()
         for sprite in drawable:
             sprite.draw(screen)
         pygame.display.flip()
